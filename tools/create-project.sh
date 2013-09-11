@@ -65,3 +65,7 @@ pushd android
 
 popd
 
+cp tools/assets/build.gradle android/
+
+
+
