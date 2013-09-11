@@ -62,10 +62,14 @@ pushd android
 	mv src.bak/* src/main/java
 	rm -rf src.bak
 
+#	keytool -genkey -v -keystore release.keystore -alias key0 -keyalg RSA -keysize 2048 -validity 10000
 
 popd
 
 cp tools/assets/build.gradle android/
+
+
+
 
 
 
