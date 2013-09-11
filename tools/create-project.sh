@@ -50,7 +50,7 @@ then
 	usage
 	exit 1
 fi
-
+mkdir -p android
 pushd android
 
 	android create project -k $PACKAGE -n $NAME -t $TARGET -a $ACTIVITY -p .
@@ -62,11 +62,11 @@ pushd android
 	mv src.bak/* src/main/java
 	rm -rf src.bak
 
-#	keytool -genkey -v -keystore release.keystore -alias key0 -keyalg RSA -keysize 2048 -validity 10000
-
 popd
 
 cp tools/assets/build.gradle android/
+cp tools/assets/release.keystore android/
+cp tools/assets/gradle.properties android/
 
 
 
