@@ -56,11 +56,14 @@ pushd android
 	android create project -k $PACKAGE -n $NAME -t $TARGET -a $ACTIVITY -p .
 	rm project.properties
 	rm build.xml
+	rm ant.properties
 	mv src src.bak
 	mkdir -p src/main/java
 	mkdir -p src/test/java
 	mv src.bak/* src/main/java
 	rm -rf src.bak
+	mv AndroidManifest.xml src/main/AndroidManifest.xml
+	mv res src/main/res
 
 popd
 
